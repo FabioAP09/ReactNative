@@ -1,21 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{Component} from 'react';
+import {View,Text,StyleSheet} from 'react-native';
+import ImageReact from './src/components/ImageReact';
+import SejaBemVindo from './src/components/SejaBemVindo';
+import Button from './src/components/Button';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+class Saudacao extends Component{
+  render(){
+    let nome= 'Fábio';
+    return(
+      <View style={styles.container}>
+        <SejaBemVindo tipoSaudacao='Olá! Seja Bem-Vindo!'/>
+        <Text>Lorem ipsum is simply dummy text to the {nome}</Text>
+        <ImageReact largura={500} altura={500} nomeSaudacao='Clique aqui para acessar'/>
+        <Button />
+
+      </View>
+    )
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles=StyleSheet.create({
+  container:{
+    margin:30,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+})
+
+export default Saudacao;
